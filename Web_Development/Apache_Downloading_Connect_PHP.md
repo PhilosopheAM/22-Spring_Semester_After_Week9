@@ -19,8 +19,15 @@
 6. 完成上述步骤以后进入检查部署环节：在控制台中（在bin文件夹下）键入指令**httpd -k start**(注解：不要带*、""等符号).一般不会有反馈.打开浏览器，在url输入栏中键入**http://localhost**(注解：不要带*、""等符号).浏览器会渲染出一个介绍Apache的界面或者显示如"It works"的成功提示字符（根据你选定的第三方提供商而有不同）。如果你用这个方法出现了问题，也可以使用其他方法。
    + 双击运行解压目录/bin下的ApacheMonitor.exe，然后会有一个右下角的后台程序，双击它打开面板，start启动（如果start不可选择且面板左侧没有显示任何apache版本则说明 step5 没有正常完成. 正常情况应该如下图：![](source/img/Apache-monitor%20%20.png)
    + 或者手动在windows中打开服务。win+r键入**services.msc**(注解：不要带*、""等符号)找到名称为Apache的服务后启动。如果没有找到该服务，返回 Step5.
+7. **Warning**第七步是对第六步可能会出现的一个常见错误的补充。下面给出一个常见报错的修复方法：
+   + “端口占用”报错（key word - socket, 套接字). 这个问题出现的原因是：当前你的电脑中有程序（服务）正在占用Apache想要使用的端口（简单理解为数据传输的出口）
+   + 第一种解决这个问题的方法是 - 手动关闭当前占用端口的服务。我并不推荐这个方法（因为Apache想要的80和443端口很多其他进程都会用）。我给出[参考链接](https://www.runoob.com/w3cnote/windows-finds-port-usage.html)。请按照链接中方法处理80端口和443端口（或视Apache报warning情况处理）
+   + 第二种解决这个问题的方法是 - 改变Apache使用的端口。我比较推荐这个方法。请参考Apache报warning情况来决定是否同时改变80，443端口或者只改变一个。
+     + 找到Apache安装文件夹中conf folder下的httpd.conf文件，使用crtl+F找到"Listen 80"并修改为"Listen 8080"**（8080代表8080号端口，你可以使用其他端口，这里涉及一点计算机网络通信设计的问题）**.注意，你无需改动该行上面的那一句“似乎”也有80端口的一句（当然你改了也没用）。最终结果如图![](source/img/改动80监听端口.png)
+     + 当出现443端口占用问题时，请找到Apache安装文件夹中conf文件夹下的extra folder中的httpd-ssl.conf然后查找Listen 443并修改（就像修改80端口一样）
+   + 如果上述两个办法都不成功，请使用Nginx. 抛弃Apache吧，学点新东西没有坏处。（图穷匕见了属于是）.
 
-*配置Apache（提供PHP支持）*
+*配置Apache（提供PHP支持）*。
 1. 到官网上下载PHP，**注意**找到Windows版本，而不是去下载suffix为gz的压缩包；并解压到你希望储存PHP软件的文件夹
 2. 打开Apache24 folder也就是Apache文件解压到的文件夹，再次编辑conf folder中的httpd.conf. 为了保持工整，我们crtl+F找到LoadModule（有一长串）的结尾，并粘贴如下文本：
       ````
@@ -35,5 +42,11 @@
    + **注意** 如果你的PHP版本是PHP7，那么 LoadModule php_module "D:/PHP/php8apache2_4.dll" 中的php_module请替换成php7_module.
    + **注意** 请将"D:/PHP/php8apache2_4.dll"替换成你的PHP安装文件夹下的php8apache2_4.dll的绝对路径
    + **注意** 请将 PHPIniDir "D:/PHP"中的"D:/PHP"替换成你的电脑中PHP软件存放文件夹的绝对路径
-3. 
+3. 找到Apache24 folder下的一个htdocs folder，新建一个 **test.php**文件（推荐先用记事本创建，然后修改suffix到php），将以下代码粘贴进去：
+   ````php
+      <?php
+         echo 'It\' has been two years since I first met you. But I am still missing you, and meeting you in my everyday dream.'
+      ?>
+   ````
+4. 打开浏览器，在url栏中键入 **http://localhost/test.php**. 一般来说，会显示php代码文本。否则，检查上述步骤。
 
