@@ -25,7 +25,7 @@ Web服务器就是用于响应用户需求，按需（设计功能）提供Web�
 ## 不同服务器软件介绍
 
 |Software|Type|Description|Application|Advantage|Other|
-|:---|:---|:---|
+|:---|:---|:---|:---|:---|:---|
 |Nginx|HTTP服务器|将静态资源通过HTTP协议传输给客户端；现在一般用它来做**反向代理服务器**或者**负载均衡**|现实应用中一般用Nginx作为客户端-后端真正的动态服务器之间的配合，做服务请求转发，提供灵活稳定的Web服务|性能好，稳定性高，内存消耗少|纯C语言，开源；大量企业使用Nginx|
 |Tengine|HTTP服务器|基于Nginx做的改版，阿里开发|主要面向大流量场景，比方说淘宝|大规模检验，稳定性好|Null|
 |Apache HTTP Server|HTTP服务器|和Nginx功能相像，但并发性、负载、资源消耗方面比不上Nginx|最近大家转向Nginx较多|Null|Apache基金会项目，开源|
