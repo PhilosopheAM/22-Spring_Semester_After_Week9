@@ -1,4 +1,9 @@
 # 第九周系统设计与管理 运筹学介绍 (Introduction to OR)
+````
+DOCTYPE - md & Katex. 使用基于Pandoc的渲染器输出PDF文档
+Copyright is reserved by Harry Chen. If you have any problem, please contact the author through 11911421@mail.sustech.edu.cn
+````
+
 
 《模仿游戏》、《美丽心灵》女主都好漂亮。
 
@@ -38,6 +43,10 @@ OR (Operational reseach) 运筹学的应用：
   + A contraint is **binding** if the left hand side and the right hand side of the constraints are equal at the optimal solution.
   + Otherwise, it's not binding.
 
+再给出一个[参考视频](https://youtu.be/f3Gz4SGQV9M)，这个讲得更好。这个华人教授讲得很清楚，最重要的是英语口音没有咖喱味...
+
+但是这里似乎有一个定义的不同 **@王振坤教授**，似乎在一些地方会有slack variable 和 excess variable 的区别：参考  
+![](source/img/slack%20variable%20and%20excess%20variable.png '图源来自https://youtu.be/f3Gz4SGQV9M')
 ## Linear Programming 中的 Dual Programming 
 
 对于对偶规划问题(Dual Programming)，参考了一个美女姐姐的教学视频（小姐姐声音好甜）
