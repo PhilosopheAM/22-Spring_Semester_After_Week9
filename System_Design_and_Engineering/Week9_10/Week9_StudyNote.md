@@ -57,7 +57,49 @@ $$
 那么同样的我们可以得到
 $$4\times\left[ 3x_1+x_2\leq25\right]$$ $$\Downarrow$$ $$Z=3x_1 + 4x_2\le12x_1+4x_2\le100$$
 我们只是对(1)或(2)式作单独的乘数操作，我们也可以联立两式来达到：
-$$$$
-Dual programming的想法就是这样——通过找到Maximum LP问题中等号右边的最小值，来确定Maximum value到底是多少。那我们要问，是否存在这样一种形式可以“恰好地”得到解：
-$$$$
 
+$$2\times\left[\frac{1}{2}x_1+2x_2\le30\right]+\left[3x_1+x_2\le25\right]$$ $$\Downarrow$$ $$Z = 4x_1+5x_2\le85$$
+
+Dual programming的想法就是这样——通过找到Maximum LP问题中等号右边的最小值，来确定Maximum value到底是多少。那我们要问，是否存在这样一种形式可以“恰好地”得到解：
+$$y_1\left[\frac{1}{2}x_1+2x_2\le30\right]+y_2\left[3x_1+x_2\le25\right]$$
+从而得到：
+$$\left(\frac{1}{2}y_1+3y_2\right)x_1+\left(2y_1+y_2\right)x_2\le30y_1+25y_2$$
+这里出现了一个重要的性质：如果我们希望以上不等式成立，就必须确保$30y_1+25y_2$总是大于左侧部分；注意到我们在前提中使用了“恰好”这样的词，说明我们希望右侧部分和左侧部分“尽可能恰好地”相等。  
+注意到Objective Function是 $Z = 3x_1+4x_2$，我们只要达成如下条件便可以保证: 
+$Z = 3x_1+4x_2\le\left(\frac{1}{2}y_1+3y_2\right)x_1+\left(2y_1+y_2\right)x_2\le30y_1+25y_2$
+条件是：
+$$
+\begin{cases}
+ \frac{1}{2}y_1+3y_2 \ge3\\
+2y_1+y_2 \ge 4 \\
+\end{cases}
+$$
+从而我们发现了一个不得了的事情：我们似乎可以从一个Max的LP问题找到一个Min的LP问题，这样就称为Dual Programming. 上面的这个例子最终的Dual Programmming LP是：
+$$
+\begin{align}
+W = 20y_1+25y_2\\
+ \frac{1}{2}y_1+3y_2 \ge3\\
+2y_1+y_2 \ge 4 \\
+x_1,x_2\ge0
+\end{align}
+$$
+**我们使用W表示Dual programming的目标函数，用Z表示Primal的目标函数**
+简单总结一下Dual programming的思想——找到Objective Function能够逐渐逼近的的Upper bound/ Lower bound.  
+下面我们来考察一下Dual Programming的性质(Properties)：
+
+1. Weak duality property
+   + 在一个Max LP问题中，Primal问题的可行解总是被bounded from above by 对偶问题的可行解；Min LP 问题则是bounded from below.
+   + 数学表示 $ Max\Rightarrow\bar Z\le\bar W$
+   + 数学表示$ Min\Rightarrow\bar Z\ge\bar W$
+2. Unboundness property
+   + If the primal (or dual) problem has a unbounded solution, then the dual (primal) is infeasible.
+   + 这个性质很好理解，可以从 Weak duality property得出
+   + 数学表示（Min省略） $ Max \Rightarrow \bar Z\le\infty$
+3. Strong duality property
+     + If the primal (dual) problem has a finite optimal solution （有限取值的最优的解）, then so does the dual (primal) problem and the values of primal and dual objective function are equal at their optimal solution.
+     + 数学表示  $Z\ast =W\ast $
+
+### 第二节视频 https://youtu.be/MWwnk9XIQ0Q
+TO-DO ：LP2
+### 第三节视频 https://youtu.be/wVnr1HhUCT0
+TO-DO: LP3
