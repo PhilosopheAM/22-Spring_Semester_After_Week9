@@ -64,10 +64,14 @@ $$
 
 我们会发现对于(2)有 $$6\times\left [\frac{1}{2}x_1+2x_2\leq30 \right ]$$ 即$3x_1+12x_2\le180$，又由于(4)的成立，有$$Z=3x_1 + 4x_2\le3x_1+12x_2\le180$$
 那么同样的我们可以得到
-$$4\times\left[ 3x_1+x_2\leq25\right]$$ $$\Downarrow$$ $$Z=3x_1 + 4x_2\le12x_1+4x_2\le100$$
+$$4\times\left[ 3x_1+x_2\leq25\right]$$ 
+$$\Downarrow$$ 
+$$Z=3x_1 + 4x_2\le12x_1+4x_2\le100$$
 我们只是对(1)或(2)式作单独的乘数操作，我们也可以联立两式来达到：
 
-$$2\times\left[\frac{1}{2}x_1+2x_2\le30\right]+\left[3x_1+x_2\le25\right]$$ $$\Downarrow$$ $$Z = 4x_1+5x_2\le85$$
+$$2\times\left[\frac{1}{2}x_1+2x_2\le30\right]+\left[3x_1+x_2\le25\right]$$ 
+$$\Downarrow$$ 
+$$Z = 4x_1+5x_2\le85$$
 
 Dual programming的想法就是这样——通过找到Maximum LP问题中等号右边的最小值，来确定Maximum value到底是多少。那我们要问，是否存在这样一种形式可以“恰好地”得到解：
 $$y_1\left[\frac{1}{2}x_1+2x_2\le30\right]+y_2\left[3x_1+x_2\le25\right]$$
