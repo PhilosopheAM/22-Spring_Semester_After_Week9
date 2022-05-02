@@ -31,10 +31,11 @@ Web服务器就是用于响应用户需求，按需（设计功能）提供Web�
 |Apache HTTP Server|HTTP服务器|和Nginx功能相像，但并发性、负载、资源消耗方面比不上Nginx|最近大家转向Nginx较多|Null|Apache基金会项目，开源|
 |IIS|Web服务|是一个HTTP静态服务器，但是支持ASP.NET，所以可以作为Web服务器使用|因为是Windows生态的，很少用|Null|Windows开发，不开源|
 |Tomcat|Java应用服务器软件|Java runtime下做Java EE的应用服务器|SpringBoot将Tomcat作为内嵌的默认应用服务器（容器）；在流量不大的情况下可以直接做HTTP服务器用（一般不会用，不会让Tomcat直面用户）|名声响啊|Apache软件基金会项目|
-|Jetty|
+|Jetty|HTTP+应用服务器|和Tomcat差不多|一般作为动态服务器使用，SpringBoot支持的容器|较Jetty更为轻量化，配置更加简单|Eclipse基金会旗下|
+|Undertow|应用服务器|Java语言开发，开源|应用服务器|灵活，并发性能好|红帽子Red Hat开发维护|
+|JBoss.Widlfly|企业级的JAVAEE服务器|很强，应用范围广泛|企业|Null|红帽子开发维护|
+|WebLogic|商业级别的服务器|JavaEE规范支持|企业|Oracle开发，大厂，体量大，商业社群广|Null|
+|WebSphere|JavaEE规范|同上|同上|体量大|Null|很贵|
 
-
-
-
-
-
+完稿于22.5.2 感谢b站up主程序羊 **CodeSheep**的讲解！
+All rights are reserved by Koichi Tanaka.
