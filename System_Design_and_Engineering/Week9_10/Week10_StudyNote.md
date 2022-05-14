@@ -89,6 +89,12 @@ $$Bx_B = Bx_B^1 =Bx_B^2 = b $$
 
 ![](source/img/Definition%20of%20Concave%20Function.png '图源来自：https://youtu.be/a_gRfwHUlhQ')
 
+## 单纯形法 - 步骤与讲解
+>这一部分内容参考了textbook - Introduction to Operations Research (Frederick S. Hillier & Gerald J. Lieberman) 第十版（英文版）；
+>其他参考内容将在内容下注明.
+
+
+
 
 
 
