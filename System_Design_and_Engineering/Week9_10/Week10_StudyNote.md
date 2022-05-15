@@ -78,11 +78,6 @@ $$
 $$Bx_B = Bx_B^1 =Bx_B^2 = b $$
 上面这个式子有同学问我为什么能够成立，其实很简单，因为我们的前提是$x_1，\ x_2$都是Feasible solutions.最后我们得到的结果就很容易了：由于$B$是一个空间的基，显然是一个非奇异矩阵(Non-Singular Matrix).因此我们得到了这样的结论——$x_B=x_1^B=x_2^B$, i.e. $x=x_1=x_2$.
 
-
-
-
-
-
 ## 什么是 凸函数Convex Function 和 凹函数Concave Funtion
 
 ![](source/img/Definition%20of%20Convex%20Function.png '图源来自：https://youtu.be/a_gRfwHUlhQ')
@@ -92,6 +87,8 @@ $$Bx_B = Bx_B^1 =Bx_B^2 = b $$
 ## 单纯形法 - 步骤与讲解
 >这一部分内容参考了textbook - Introduction to Operations Research (Frederick S. Hillier & Gerald J. Lieberman) 第十版（英文版）；
 >其他参考内容将在内容下注明.
+TODO: 期末复习单纯形法时回顾并把书上的笔记摘录
+TODO: 单纯形法优越性与成立的数学证明
 
 
 

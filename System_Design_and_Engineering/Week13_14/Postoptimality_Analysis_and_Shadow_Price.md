@@ -28,4 +28,4 @@
 
 ---
 以下为Introduction to Operations Research的4.7内容
-TODO:22.5.14
+TODO:22.5.14 - 后接Introduction to Operations Research 的4.7
