@@ -30,3 +30,8 @@ A metaheuristics is a general solution method that provides both a general struc
 ![](source/img/Reference-Chapter14-figure14.1.png)
 用一个简单的gradient search procedure做，假设从$x=0$开始作为inistial trial silution,那么会在$x=5$的时候停下来（因为达到了一个local optima.
 或者以另一种方法 the bisection method 二分法来做，取 lower bound $x=0$ 和 upper bound $x=6$可以看到 sequence of trial solutions obtained 是 $x=3, x=4.5, x=4.825$即不断地逼近local optima $x=5$. 这是一个更加明显、典型的local improvement procedure.
+TODO - 继续写，现在先跳到遗传算法的资料上
+
+### Genetic Algorithm 遗传算法 GA
+
+TODO - 参考资料：https://blog.csdn.net/acelit/article/details/78187715
