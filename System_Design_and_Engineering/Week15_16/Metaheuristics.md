@@ -35,3 +35,8 @@ TODO - 继续写，现在先跳到遗传算法的资料上
 ### Genetic Algorithm 遗传算法 GA
 
 TODO - 参考资料：https://blog.csdn.net/acelit/article/details/78187715
+TODO - 轮盘赌算法 参考资料：https://zhuanlan.zhihu.com/p/140418005 ,不过我更推荐这个[Youtube video](https://www.youtube.com/watch?v=-B15r-8WX48)
+
+#### GA中的轮盘赌选择方法讲解 Roulette Wheel Selection for Genetic Algorithm
+TODO - Roulette Wheel Selection for Genetic Algorithm
+ 
