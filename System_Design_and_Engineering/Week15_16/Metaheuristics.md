@@ -74,8 +74,30 @@ TODO - Roulette Wheel Selection for Genetic Algorithm
 我对这一段的注解比较简要，故抄出 - 
 >That is - when time(iterations) goes by, the algorithum allows less and less 'downward path' trials, i.e., in the early stage, the algorithum is encouraged to explore more feasible region so as to meet the global optima (fortuitously).
 
-**核心操作**
--
-<iframe src="https://media.giphy.com/media/azlNDcF9sqWpEI63wU/giphy.gif">
-<!-- <img src = "https://media.giphy.com/media/azlNDcF9sqWpEI63wU/giphy.gif"> -->
+<img src="https://media.giphy.com/media/azlNDcF9sqWpEI63wU/giphy.gif" title = "模拟退火算法演示" alt = "模拟退火的演示 - 逐渐到达全局较（最）优解">
+
+上面是模拟退火算法的迭代示意
 <!-- 上面的这个gif动态可能无法在PDF等输出格式下查看，如果需要查看，建议使用支持md的渲染器（阅读器），如有问题请联系11911421@mail.sustech.edu.cn 笑，如果是pdf查看也看不到这句注解吧-->
+
+**核心操作**
+1. 当移动集合$M$中存在当前解的可行邻域(Immediate neighbors of the current trial solution)时，随机选择可行移动$\Delta x\in M$记为临时移动$\Delta x^{t+1}$ 并计算净目标函数改进值$\varDelta obj$. 其为从当前解移动到下一可行解（临时解）目标函数的差值（注意该值可能为负值）
+2. 如果$\varDelta obj$是正值，即$\Delta x^{t+1}$改进了目标函数，那么**必须接受移动**,并且对解进行更新$$\Delta x^{t+1}\leftarrow x^{\left (t\right)}+\Delta x^{\left(t+1\right)}$$
+3. 如果如果$\varDelta obj\le0$，即$\Delta x^{t+1}$并不改进目标函数，那么以概率$e^{\varDelta obj/q}$接受该移动，并且对解进行更新$$\Delta x^{t+1}\leftarrow x^{\left (t\right)}+\Delta x^{\left(t+1\right)}$$
+4. 如果解$x^{\left(t+1 \right)}$的目标函数值比现行解$\hat x$的目标函数值更好，那么替换$\hat x \leftarrow x^{\left(t+1\right)}$
+5. 如果上一次温度变化后已经经过了足够次数的迭代，则降低温度q(温度影响了接受非改进移动的概率)
+
+以上的步骤是退火算法的核心操作，略去讲解如初值选择、判断迭代条件等其他步骤. Step 4指出了模拟退火搜索于其他进行非改进移动的搜索一样**必须保持现行解$\hat{x}$迭代更新到目前为止能够找到的最佳可行解，并且当计算停止时输出$\hat{x}$作为近似最优解**.
+
+
+关于模拟退火过程，附上两篇知乎文章：
+[模拟退火算法详解](https://zhuanlan.zhihu.com/p/266874840)
+[现代优化算法三部曲 | 模拟退火算法](https://zhuanlan.zhihu.com/p/266874840)
+
+两篇文章都讲到一个Metropolis准则，其中[现代优化算法三部曲 | 模拟退火算法](https://zhuanlan.zhihu.com/p/266874840)中写到：
+>模拟退火算法包含两个部分即Metropolis算法和退火过程。Metropolis算法就是如何在局部最优解的情况下让其跳出来，是退火的基础。1953年Metropolis提出重要性采样方法，即以概率来接受新状态，而不是使用完全确定的规则，称为Metropolis准则，计算量较低。
+
+这里注意到一个新的名词——重要性采样方法。贴references:
+[wikipedia-importance sampling](https://en.wikipedia.org/wiki/Importance_sampling)
+[Zhihu - 重要性采样（Importance Sampling）](https://zhuanlan.zhihu.com/p/41217212)
+[Zhihu - 重要性采样(Importance Sampling)详细学习笔记](https://zhuanlan.zhihu.com/p/342936969)
+TODO - Reading references of importance sampling 重要性采样
