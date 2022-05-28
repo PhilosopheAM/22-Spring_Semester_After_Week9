@@ -61,3 +61,20 @@ TODO - Roulette Wheel Selection for Genetic Algorithm
 ### Simulated Annealing 模拟退火
 ![](source/img/Annealing_def_metallugy.png)
 <!-- 笑，梦回王教授做的材料工程基础，那时候我的pre就是讲金属高温加工过程。历历在目。 -->
+
+**Definition of Simulated Annealing** - 
+这一方法因其类似于金属冶炼中为提高金属强度而对其缓慢冷却的退火过程而得名。模拟退火算法通过依概率接受非改进移动的过程来控制循环。这一概率是由计算机随机生成的。
+
+**为什么要设计这样的算法** - 
+引用Boyed书中的原话：
+>（The programming problem is like finding the tallest hill)...the search process gradully increase the emphasis on climbing upward by rejecting an incresing proportion of steps that go downward.
+
+上面这句话是比较清晰的。书中还拿Tabu search的举（反）例：禁忌搜索的**drawback is that a lot of time(iterations) is spent climbing each hill encountered rather than searching for the tallest hill**.但在模拟退火中，"(the method) is to focus mainly on searching for the tallest hill"
+
+我对这一段的注解比较简要，故抄出 - 
+>That is - when time(iterations) goes by, the algorithum allows less and less 'downward path' trials, i.e., in the early stage, the algorithum is encouraged to explore more feasible region so as to meet the global optima (fortuitously).
+
+**核心操作**
+-
+<iframe scr="https://media.giphy.com/media/azlNDcF9sqWpEI63wU/giphy.gif">
+<!-- 上面的这个gif动态可能无法在PDF等输出格式下查看，如果需要查看，建议使用支持md的渲染器（阅读器），如有问题请联系11911421@mail.sustech.edu.cn 笑，如果是pdf查看也看不到这句注解吧-->
