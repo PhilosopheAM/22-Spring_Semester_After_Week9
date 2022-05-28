@@ -5,7 +5,10 @@ Copyright is reserved by Harry Chen. If you have any problem, please contact the
 ````
 
 # Intro to Metaheuristics
-> Reference : Boyed的Intro. Charpter 14.
+> Reference : 
+> Boyed的Intro. Charpter 14.
+> Optimization in Operations Research(2nd Edition) by Ronald L.Rardin 中文版译者肖勇波&梁湧
+> 其他参考在文中给出
 
 
 ### Def of heuristic method- 
