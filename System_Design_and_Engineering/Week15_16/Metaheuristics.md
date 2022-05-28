@@ -76,5 +76,6 @@ TODO - Roulette Wheel Selection for Genetic Algorithm
 
 **核心操作**
 -
-<iframe scr="https://media.giphy.com/media/azlNDcF9sqWpEI63wU/giphy.gif">
+<iframe src="https://media.giphy.com/media/azlNDcF9sqWpEI63wU/giphy.gif">
+<!-- <img src = "https://media.giphy.com/media/azlNDcF9sqWpEI63wU/giphy.gif"> -->
 <!-- 上面的这个gif动态可能无法在PDF等输出格式下查看，如果需要查看，建议使用支持md的渲染器（阅读器），如有问题请联系11911421@mail.sustech.edu.cn 笑，如果是pdf查看也看不到这句注解吧-->
