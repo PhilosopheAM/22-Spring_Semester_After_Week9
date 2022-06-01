@@ -56,3 +56,42 @@ Subsystems are therefore invariably sub-optimal when SoS(System-of-systems) comp
 |Utilization Phase|系统的实用阶段。这一阶段中可能对系统做出调整改进以弥补功能缺陷、适应需求的调整|
 |Retirement Phase|Following operational use and system support, the system is eventually phased out and retired from service. 假如组织仍然需要capability，那么retirement&nbsp;phase 后面通常就是一个新系统的cycle开始.|
 
+### Acquisition and Utilizatiion phases 获得与利用阶段
+这两个阶段是整个system life cycle中的核心阶段。
+Acquisition Phase : 
++ Conceptual Design
++ Preliminary Design
++ Detailed Design and Development
++ Construction & Production
+
+Utilization Phase :
++ Operational Use
++ System Support
+
+### Conceptual Design in Acquisition Phase
+这里有一个很有意思的点，摘出教材的一段话：
+>Although clearly defining the requirements of the system would seem a logical (and essential) first step, it is often poorly done and is commonly the direct cause of problems later in the development process.
+>Businiess managers and stakeholders sometimes prefer to describe their requirements in loose and ambiguous terms to protect themselves from changes in their needs and their business environment.
+
+这就很有意思了。我们做概念设计就是为了避免混淆(avoid ambiguity). 为了实现这一点，管理者们开发了一整套的terminology和process.
+我们将在后面具体学习它们。
+
+## Systems Engineering 系统工程
+![](source/img/1-Introduction_to_System-def_SE_incose.png)
+
+![](source/img/1-Introduction_to_System-def_SE_Qian_Nasa.png)
+
+### Top-down Approach
+>Sysem enginnering begins by addressing the system as a whole. ————textbook
+
+自顶而下(Top-down)不同于传统的工程方法（自下而上），传统的工程方法在问题是明确且直接时是极其有效的，但是我们今天面对的问题大多是复杂、混淆的。使用Top-down方法的步骤是层层分解，直至"until a complete understanding is achieved of the system from top to down"
+
+在定义、探讨、分解的过程中，我们对系统组件的联系会理解地更加深刻，有助于我们实现交互边界的确定与设计("the interaction between the components can be understood more thoroughly, which assists in identifying and designing the necessary interfaces between components/internal interfaces and between this and other systems/enternal interfaces").
+
+但是，即便如此，我们仍然要重复一点——在实现工作(Implementation)的层面上，我们仍然需要Bottom-Up来做。我觉得textbook中的这一段写得非常好：
+>That is, one of the aims of system engineering is to provide a rigorous, reproducible process **by which the complex system can be broken down into a series of simple components that can then be designed and built using the traditional bottom-up engineering approach**.
+>Imporotantly, therefore, the second principla facet of systems engineering is **to provide a process by which** the components, assembles, and subsystems,i.e., **things that are parts of the larger system, can be integrated to achieve the desired system purpose**. 
+
+Summary - 
+1. 经过SE分析后，项目可以被传统的bottom-up方法做起来
+2. 组成部件是可顺利组装（整合、构造）以实现系统目的的
