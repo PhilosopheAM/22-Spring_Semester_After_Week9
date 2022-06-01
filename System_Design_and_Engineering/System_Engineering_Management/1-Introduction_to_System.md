@@ -84,14 +84,57 @@ Utilization Phase :
 ### Top-down Approach
 >Sysem enginnering begins by addressing the system as a whole. ————textbook
 
-自顶而下(Top-down)不同于传统的工程方法（自下而上），传统的工程方法在问题是明确且直接时是极其有效的，但是我们今天面对的问题大多是复杂、混淆的。使用Top-down方法的步骤是层层分解，直至"until a complete understanding is achieved of the system from top to down"
+**自顶而下(Top-down)**不同于传统的工程方法（自下而上），传统的工程方法在问题是明确且直接时是极其有效的，但是我们今天面对的问题大多是复杂、混淆的。使用Top-down方法的步骤是层层分解，直至"until a complete understanding is achieved of the system from top to down"
 
 在定义、探讨、分解的过程中，我们对系统组件的联系会理解地更加深刻，有助于我们实现交互边界的确定与设计("the interaction between the components can be understood more thoroughly, which assists in identifying and designing the necessary interfaces between components/internal interfaces and between this and other systems/enternal interfaces").
 
-但是，即便如此，我们仍然要重复一点——在实现工作(Implementation)的层面上，我们仍然需要Bottom-Up来做。我觉得textbook中的这一段写得非常好：
+但是，即便如此，我们仍然要重复一点——**在实现工作(Implementation)的层面上，我们仍然需要Bottom-Up来做**。我觉得textbook中的这一段写得非常好：
 >That is, one of the aims of system engineering is to provide a rigorous, reproducible process **by which the complex system can be broken down into a series of simple components that can then be designed and built using the traditional bottom-up engineering approach**.
 >Imporotantly, therefore, the second principla facet of systems engineering is **to provide a process by which** the components, assembles, and subsystems,i.e., **things that are parts of the larger system, can be integrated to achieve the desired system purpose**. 
 
 Summary - 
 1. 经过SE分析后，项目可以被传统的bottom-up方法做起来
-2. 组成部件是可顺利组装（整合、构造）以实现系统目的的
+2. 组成部件是可顺利组装（整合、构造）以实现系统目的
+
+### Requirements Engineering 需求工程
+系统工程早期的努力致力于发展出一套完整、准确的系统需求（定义），这也是项目成功的基础。从定义business needs开始到形成概念设计、发展物理架构(physical structure)，这一流程必须严谨。由此，一个定义严格的process用于这一发展过程，称为“需求工程”(Requirements engineering).
+
+需求工程一定要保证不在process中考虑技术路径，原话为：
+>...must achieve these(resulting requirements) without pre-supposing a particular technical solution or placing unneccessary technical constraints on the solution.
+
+### Foucus on Life Cycle 关注产品生命周期
+参考教材中指出：
+>A life-cycle focus requires a focus on the capability system, not on the product.
+
+SE的一个重要特征即是：**关注整个产品生命周期**(而非单独的产品)，并在做出决策的process中考虑对产品生命周期。
+
+### System Optimization and Balance 系统最优化与（子系统/组成）平衡
+一个复杂系统的组成必然要考虑诸多因素、组成部分的影响。原文是：
+>A system architecture must represent a balance between the large number of requirements and constraints...A simple, but essential example is the balance between just two design factors: cost and performance...Metrics such as cost-effectiveness must be measured across all phases, not just acquisition. 
+系统工程所采用的top-down方法的一个优势是在设计过程中容易自然而然地达成system optimization和system balance.
+系统工程中的一个子因素/子系统可能是sub-optimal以达成globally-optimal，这要求在design process中采用top-down视角而非bottom-up建构。
+
+### 跨学科、更多元的管理 - 对SE的挑战
+SE的（几乎是最重要的）目标是有效管理、集成(integrate)多学科领域的工作来"ensure that all stakeholder requirements are adequately addressed".
+尤其是在今天，一项工程任务往往需要数个、数十个学科的工作者共同努力。比如一款无人机的商业项目，研发阶段需要数个工程领域的通力协作（如EE，satety, production, corrosion engineers...)一些其他的non-engineering的领域也需要involved比如marketing, finance...
+现在我们不仅仅面对多学科协作开发，同样的，我们还面临着如geographic dispersion等等全球化带来的新问题、新挑战。
+
+要解决如此复杂的系统工程问题，SE就变成了不仅仅是工程，更是一个管理的学科
+>Systems engineering has both a management and a techinical role.
+
+系统项目工程师需要确保系统的三项重要的指标实现：
++ **on-time** 按时交付性
++ **within-budget** 预算范围内完成项目
++ **meets the expectations of customers**符合客户预期需求
+
+另外：小型项目是否需要部署完整的SE?回答是不需要。
+>It is critical to understand the merits of systems engineering and apply them in a tailored manner, cognizant of the relative size, complexity, and risks associated with each undertaking.
+
+我们需要“对症下药”，单独的项目(individual project)需要合适“裁剪”(tailored)的SE方案。
+
+### SE能带来的好处 Benefits
+1. SE能够在全局视野内考虑整体成本。这里涉及到一个termonology是**LLC (life-cycle cost)产品生命周期成本(Saving money during all phases of the system life cycle)**。在设计各个phases时，如果提早考虑了SE("an early emphasis on systems engineering")，那么能显著减少花费(cost).
+2. 时间成本。如果能够在design process就加入"rigorous consideration and evaluation of feasible design alternatives"的话，就可以**更大地、更早地提升（产品）设计的成熟度，减少改动，加快产品上线的时间**。
+3. SE是一个严谨的流程(rigorous process). 它所**导出的需求(requirements)是好的、真实的（一般来说有两个标准：verifiable, consistent**). 
+4. SE对项目的最好impact是在**early stage, where the ease of cahnge and cost of modification is the lowest**.需求工程中一般也是越早越好, the cost of implementing changes is the lowest. 由于早期的设计process会对后面的techinique选择有很大影响(techinial risk)，因此早期的需求分析至关重要；早期的设计流程也更加贴近user requirements,早一点发现其中conflicting的点，可以显著地降低后期的failure risk.
+5. 由于SE是严谨的流程，**quality的把控会很好**，更有可能meets the original intended purpose more completely.
