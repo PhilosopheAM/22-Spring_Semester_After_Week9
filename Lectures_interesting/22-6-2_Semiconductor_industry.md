@@ -6,6 +6,7 @@ Email - 11911421@mail.sustech.edu.cn
 本文力图从一个宏观的角度讲述半导体产业的构成、商业合作与竞争模式、现状和未来发展，可能不会设计到具体的技术。另外，由于参考视频的youtuber是台湾人，中文有地方口音，他成功把我带跑了。下文中的“晶片”即是“芯片”。
 $$Notion!!!:“晶片”=“芯片”$$
 >参考youtube视频：[什么频道——半导体产业上游](https://youtu.be/kyFZMyavQJo)
+
 [toc]
 
 ## [上游分类篇——晶片设计与应用|半导体产业的上游](https://youtu.be/kyFZMyavQJo)
