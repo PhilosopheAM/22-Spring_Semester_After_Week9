@@ -4,6 +4,7 @@ DOCTYPE - md & Katex. 使用基于Pandoc的渲染器输出PDF文档
 Copyright is reserved by Harry Chen. If you have any problem, please contact the author through 11911421@mail.sustech.edu.cn
 ````
 
+[toc]
 # Intro to Metaheuristics
 > Reference : 
 > Boyed的Intro. Charpter 14.
@@ -15,7 +16,7 @@ Copyright is reserved by Harry Chen. If you have any problem, please contact the
 
 A heuristic method is a procedure that is likely to discover a very good feasible solution but not necessarily an optimal solution(for the specific problem being considered)... can provide a silution that is at least nearly optimal(or conclude that no such solutions exist).
 
-### The drawbacks of heuristic method- 
+## The drawbacks of heuristic method- 
 
 Heuristic method often are based on relatively simple common-sense ideas for how to search for a good solution.
 
@@ -23,27 +24,58 @@ Heuristic method often are based on relatively simple common-sense ideas for how
 
 这些simple common-sense的ideas需要被carefully tailored来适应特定的问题。因此这些heuristics的方法 is designed to fit a specific problem type rather than a variety of applications.(启发式算法的针对性)
 
-### Def of Meta-heuristics methods-
+## Def of Meta-heuristics methods-
 
 A metaheuristics is a general solution method that provides both a general structure and strategy guidelines for developing a specific heristic method to fit a paticular kind of problem.
 简单来说就是：元启发式算法并不需要针对具体问题的情况设计特例的结构。元启发式算法式一大类问题的通解——基于启发式算法的特性，但是适用范围更广、约束更少。
 
-### The nature of meta-heuristics
+## The nature of meta-heuristics
 我们首先参考一个问题：
 ![](source/img/Reference-Chapter14-figure14.1.png)
 用一个简单的gradient search procedure做，假设从$x=0$开始作为inistial trial silution,那么会在$x=5$的时候停下来（因为达到了一个local optima.
 或者以另一种方法 the bisection method 二分法来做，取 lower bound $x=0$ 和 upper bound $x=6$可以看到 sequence of trial solutions obtained 是 $x=3, x=4.5, x=4.825$即不断地逼近local optima $x=5$. 这是一个更加明显、典型的local improvement procedure.
 TODO - 继续写，现在先跳到遗传算法的资料上
 
-### Genetic Algorithm 遗传算法 GA
+# Genetic Algorithm 遗传算法 GA
+![](source/img/Metaheuristics-Foundation%20of%20GA.png)
+遗传算法简单来说就是模拟自然界中生物种群进化的过程。我们回忆一下高中生物课本中关于种群进化的章节（有丝分裂）：
+1. 亲代(parents)中优秀的个体更容易活下来
+2. 在自然选择中活下来的更优秀的亲代随机配对，繁衍出子代(children).
+3. 在亲代的基因传递给下一代的过程中发生小概率的突变(mutation)使得整个种群获得新的性状。新的性状既可能帮助子代更加适应环境，也可能让子代的竞争优势减弱。
+4. 新一代种群继续繁衍...
 
+遗传算法也称进化算法，就是模拟了种群进化的过程。相比于禁忌搜索和模拟退火在一个解上迭代(processing a single trial solution at a time)，进化算法以整个解集合进行优化迭代(work with an entire **polulation** of trial solutions).
+
+![](source/img/Metaheuristics-Nature%20Evolution%20vs.%20GA.png)
+![](source/img/Metaheuristics-Nature%20Evolution%20vs.%20GA%20micro-status-Picture-show.png)
+需要注意上面第二张图示中的cross-over是单点交换。还有一种常见recombination的模式是多点交换。
+
+总结一下进化算法的特点，即：
+**A genetic algorithm tends to generate improving polulations of trial solutions as it proceeds.**
+*注解：是”生存“的概率越来越高即更优，而不是种群数量更大。*
+
+对于任何一个GA建模问题，有五个通用的需要回答的问题，这些问题也决定了这个GA算法的质量：
+1. 种群大小应当是多大？
+2. 如何决定当前种群中的哪些个体成为亲代？（以什么指标作为依据？）
+3. 亲代的特征如何（经由哪种方式）遗传（传递）到子代？
+4. 子代基因的突变如何（经由哪种方式）发生突变(mutation)?
+5. 算法停止信号是什么？(Which stopping rule should be used?)
+
+## Discussion on Parent Selection Mode 亲代选择模式的探讨
++ 最简单的方式就是Random Selection, 这样current solution的所有解都有可能成为亲代解传递特征
++ Fitness-proportionate Selection (FPS) 
+TODO - 继续阅读资料：
+https://zhuanlan.zhihu.com/p/436453994
+https://en.wikipedia.org/wiki/Fitness_proportionate_selection
+https://en.wikipedia.org/wiki/Stochastic_universal_sampling
+https://en.wikipedia.org/wiki/Tournament_selection
+https://en.wikipedia.org/wiki/Truncation_selection
+## GA中的轮盘赌选择方法讲解 Roulette Wheel Selection for Genetic Algorithm
+TODO - Roulette Wheel Selection for Genetic Algorithm
 TODO - 参考资料：https://blog.csdn.net/acelit/article/details/78187715
 TODO - 轮盘赌算法 参考资料：https://zhuanlan.zhihu.com/p/140418005 ,不过我更推荐这个[Youtube video](https://www.youtube.com/watch?v=-B15r-8WX48)
 
-#### GA中的轮盘赌选择方法讲解 Roulette Wheel Selection for Genetic Algorithm
-TODO - Roulette Wheel Selection for Genetic Algorithm
-
-### Tabu search 禁忌搜索
+# Tabu search 禁忌搜索
 
 我们之前了解过local improvement procedure,知道这一类的方法很有可能被困在局部最优解而无法得到全局最优解。GA解决跳出局部最优的方法是加入了mutation突变算子。而禁忌算法则在local improvement procedure的基础上加入了“非改进移动”的可能。
 **“非改进移动”**的定义是：当不存在改进目标值的可行移动时，通过允许进行非改进的可行一栋来跳出局部最优解所在的区域，来避免重新开始进行改进搜索。这样的逆行移动可能可以把搜索引入到可以产生进一步改进的区域。
@@ -61,7 +93,7 @@ TODO - Roulette Wheel Selection for Genetic Algorithm
 
 教科书中讲到的几个例子都是**网络组合优化问题(Combinatorial optimization problems involving networks)**
 
-### Simulated Annealing 模拟退火
+# Simulated Annealing 模拟退火
 ![](source/img/Annealing_def_metallugy.png)
 <!-- 笑，梦回王教授做的材料工程基础，那时候我的pre就是讲金属高温加工过程。历历在目。 -->
 
