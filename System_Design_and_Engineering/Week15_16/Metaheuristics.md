@@ -34,8 +34,11 @@ A metaheuristics is a general solution method that provides both a general struc
 ![](source/img/Reference-Chapter14-figure14.1.png)
 用一个简单的gradient search procedure做，假设从$x=0$开始作为inistial trial silution,那么会在$x=5$的时候停下来（因为达到了一个local optima.
 或者以另一种方法 the bisection method 二分法来做，取 lower bound $x=0$ 和 upper bound $x=6$可以看到 sequence of trial solutions obtained 是 $x=3, x=4.5, x=4.825$即不断地逼近local optima $x=5$. 这是一个更加明显、典型的local improvement procedure.
-TODO - 继续写，现在先跳到遗传算法的资料上
+可以发现，这是一个“计算-探索”结构的问题：
+1. 选择**计算**就会拿出更多的资源在某一局部寻找附近更优的解
+2. 选择**探索**就会拿出更多的资源探索更远处的可能性以求避免提前在非最优局部收敛
 
+**元启发式搜索方法**引入“随机”来达成**探索**.避免在早期搜索阶段陷入局部收敛陷阱。
 # Genetic Algorithm 遗传算法 GA
 ![](source/img/Metaheuristics-Foundation%20of%20GA.png)
 遗传算法简单来说就是模拟自然界中生物种群进化的过程。我们回忆一下高中生物课本中关于种群进化的章节（有丝分裂）：
@@ -48,6 +51,7 @@ TODO - 继续写，现在先跳到遗传算法的资料上
 
 ![](source/img/Metaheuristics-Nature%20Evolution%20vs.%20GA.png)
 ![](source/img/Metaheuristics-Nature%20Evolution%20vs.%20GA%20micro-status-Picture-show.png)
+需要说明在第一张图中*Individual living in that environment*不仅仅指current polulation中的解。为了引入多样性，在一些GA的设计中会加入**Immigrants 移民**作为亲代。这些移民是随机生成的可行解，一般来说会与当前种群特征无关。
 需要注意上面第二张图示中的cross-over是单点交换。还有一种常见recombination的模式是多点交换。
 
 总结一下进化算法的特点，即：
@@ -71,15 +75,34 @@ TODO - 继续写，现在先跳到遗传算法的资料上
 从图中可以直观地看出来：SUS在保留weaker individuals上做得更好，为解集合保存了多样性。
 + 锦标赛模式([Tournament Selection](https://en.wikipedia.org/wiki/Tournament_selection)). 
 ![](source/img/Metaheuristics-Tournament%20Selection%20wiki%20def%20features.png)
+  + 锦标赛模式有一个重要指标称为*Selection Pressure*，简单理解就是个体的存活压力（压力都是同代给的，😀）.
+  + 锦标赛的意思就是，每一次选择都随机得到一个规模为S的子集，然后选出子集中优秀的部分（选择的方法有很多）作为亲代。一般来说，S越大，Selection Pressure就越大（因为更容易包含high fitness的个体）
+  + 锦标赛模式的优点在于：
+      1.相比于FPS等方法，没有随机噪声(Stochastic noise) 
+      2. 实现起来简单、高效
+      3. 可以在并行架构上实现
+      4. Selection Pressure可以通过调整Candidate size *S*快速调整
++ [截断方法Truncation Selection](https://en.wikipedia.org/wiki/Truncation_selection). 这个方法非常直观：截取current polulation的前1/p个体并复制p次获得亲代(p为大于1的整数)。这个方法使用频率比较低；在动植物育种领域是标准方法。
++ 概率选择Probability Selection，这个我也没搞太懂，只说是和FPS很像，但是不是用fitness作为选择指标。贴图：
+  ![](source/img/Metaheuristics-Probability%20Selection.png)
+  TODO - GA中的概率选择策略研究
++ 精英选择(Elite Selection):精英选择策略允许亲代中最优秀的部分原封不动地进入下一轮迭代。一方面，这样有利于传递亲代中已经明显出现的优势特征；另一方面，这一策略也使得GA有更大可能提前收敛到局部最优。
 
-TODO - 继续阅读资料：
-https://zhuanlan.zhihu.com/p/436453994
-https://en.wikipedia.org/wiki/Tournament_selection
-https://en.wikipedia.org/wiki/Truncation_selection
+*由于进化算法能做的工作很有意思，所以决定继续往这个方向多看几篇文献研究一下。会单独开一节进化算法专题讲一下。参考资料暂定为 Introduction to Evolutionary Computing by A.E Eieben · J.E.Smith*
+
 ## GA中的轮盘赌选择方法讲解 Roulette Wheel Selection for Genetic Algorithm
-TODO - Roulette Wheel Selection for Genetic Algorithm
-TODO - 参考资料：https://blog.csdn.net/acelit/article/details/78187715
-TODO - 轮盘赌算法 参考资料：https://zhuanlan.zhihu.com/p/140418005 ,不过我更推荐这个[Youtube video](https://www.youtube.com/watch?v=-B15r-8WX48)
+由于轮盘赌方法比较常用且振坤课上讲到了，因此拿出来专门介绍一下。
+轮盘赌(FPS) steps：
+1. 计算当代(current population)的总和适应度(sum fitness).
+2. 对当代的所有解(individual solution)进行排序
+3. 对排序好的个解进行适应度累计概率计算(cumulative probability)
+4. 随机指针位置
+
+这个策略还是比较直观的
+参考资料：
+1. https://blog.csdn.net/acelit/article/details/78187715
+2. https://zhuanlan.zhihu.com/p/140418005
+3. 不过我更推荐这个[Youtube video](https://www.youtube.com/watch?v=-B15r-8WX48)
 
 # Tabu search 禁忌搜索
 
@@ -141,4 +164,5 @@ TODO - 轮盘赌算法 参考资料：https://zhuanlan.zhihu.com/p/140418005 ,�
 [wikipedia-importance sampling](https://en.wikipedia.org/wiki/Importance_sampling)
 [Zhihu - 重要性采样（Importance Sampling）](https://zhuanlan.zhihu.com/p/41217212)
 [Zhihu - 重要性采样(Importance Sampling)详细学习笔记](https://zhuanlan.zhihu.com/p/342936969)
-TODO - Reading references of importance sampling 重要性采样
+TODO - Reading references of importance sampling 重要性采样回补写
+真的是没看懂...说明还有很多基础知识没有学！！
