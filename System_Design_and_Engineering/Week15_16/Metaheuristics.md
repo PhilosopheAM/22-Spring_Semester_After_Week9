@@ -62,12 +62,18 @@ TODO - 继续写，现在先跳到遗传算法的资料上
 5. 算法停止信号是什么？(Which stopping rule should be used?)
 
 ## Discussion on Parent Selection Mode 亲代选择模式的探讨
+找到一个相当优秀的总结，可能比我下面的讲述还要清晰，可以选择浏览[他的分享](https://blog.csdn.net/hba646333407/article/details/103251008)。
 + 最简单的方式就是Random Selection, 这样current solution的所有解都有可能成为亲代解传递特征
-+ Fitness-proportionate Selection (FPS) 
++ Fitness-proportionate Selection (FPS) 也就是 Roulette Wheel Selection [轮盘赌方法](https://en.wikipedia.org/wiki/Fitness_proportionate_selection).简单来说，这个方法的核心想法是“存活几率越大，越容易被选为亲代，被选几率和存活几率直接相关联”。先计算出种群的存活率，"Usually a proportion of the wheel is assigned to each of the possible selections based on their fitness value...Then a random selection is made similiar to how the roulette wheel is rotated"
++ [Stochastic Universal Sampling (SUS)](https://en.wikipedia.org/wiki/Stochastic_universal_sampling) 随机总体*遍历）采样（选择）方法。这个方法比FPS更为常用，因为FPS的一个缺点是在取样时非平均，更有可能取得fitness极高的individual，这样的话weaker individual被取得的概率就几乎没有，使得它们的features（可能是好的features)不能保存在种群中。SUS的方法，简单来说，就是依照当前种群大小与目标子代数目确定步长，然后在第一步时进行随机。[有个印度老师讲得比较清楚。](https://youtu.be/n4YE0ROb8sw)
+![](source/img/Metaheuristics-Fixed_step_Roulette_Wheel.png)
+![](source/img/Metaheuristics-SUS_rolled_out_Roulette_Wheel.png)
+从图中可以直观地看出来：SUS在保留weaker individuals上做得更好，为解集合保存了多样性。
++ 锦标赛模式([Tournament Selection](https://en.wikipedia.org/wiki/Tournament_selection)). 
+![](source/img/Metaheuristics-Tournament%20Selection%20wiki%20def%20features.png)
+
 TODO - 继续阅读资料：
 https://zhuanlan.zhihu.com/p/436453994
-https://en.wikipedia.org/wiki/Fitness_proportionate_selection
-https://en.wikipedia.org/wiki/Stochastic_universal_sampling
 https://en.wikipedia.org/wiki/Tournament_selection
 https://en.wikipedia.org/wiki/Truncation_selection
 ## GA中的轮盘赌选择方法讲解 Roulette Wheel Selection for Genetic Algorithm
