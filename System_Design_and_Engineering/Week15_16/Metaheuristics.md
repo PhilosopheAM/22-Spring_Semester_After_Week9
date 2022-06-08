@@ -87,6 +87,7 @@ A metaheuristics is a general solution method that provides both a general struc
   ![](source/img/Metaheuristics-Probability%20Selection.png)
   TODO - GA中的概率选择策略研究
 + 精英选择(Elite Selection):精英选择策略允许亲代中最优秀的部分原封不动地进入下一轮迭代。一方面，这样有利于传递亲代中已经明显出现的优势特征；另一方面，这一策略也使得GA有更大可能提前收敛到局部最优。
++ Reward-based Selection.
 
 *由于进化算法能做的工作很有意思，所以决定继续往这个方向多看几篇文献研究一下。会单独开一节进化算法专题讲一下。参考资料暂定为 Introduction to Evolutionary Computing by A.E Eieben · J.E.Smith*
 
