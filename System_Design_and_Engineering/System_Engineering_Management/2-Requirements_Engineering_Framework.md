@@ -1,6 +1,11 @@
+>本文作者为Toichi Tanaka. 本文参考资料已在文中给出。
+如果你有任何疑问，请联系11911421@mail.sustech.edu.cn.
+本文遵循MIT开源协议。
+[toc]
 # Requirements Engineering Framework 需求分析框架
 >参考资料为Ryan的*Introduction to Systems Engineering*
 
+## 需求与需要文档 Needs and Requirements Documentation
 Gathering requirements in a formal sustematic way is referred to generically as **requirements engineering**.
 
 我们需要知道，审视一个项目可以从几个不同的层级来看：
@@ -29,10 +34,16 @@ Gathering requirements in a formal sustematic way is referred to generically as 
 |名词简写|名词全称|说明|
 |:---|:---|:---|
 |<span id = "ConOps">ConOps</span>|Concept of Operations||
-|<span id = "PLCD">PLCD</span>|Preliminary Life-cycle Concept Documents早期生命周期概念文档||
-|<span id = "BRS">BRS</span>|Business Requirements Specification商业需要说明文档||
-|<span id = "LCD">LCD</span>|Life-cycle Concept Documents生命周期概念文档||
-|<span id = "StRS">StRS</span>|Stakeholder Requirements Specification利益相关方需要细则||
+|<span id = "PLCD">PLCD</span>|Preliminary Life-cycle Concept Documents早期生命周期概念文档|PLCD中一般要包括[Preliminary Acquisition Concept](#Acquisition_Concept), Preliminary Operational Concept[(OpsCon)](#OpsCon), [Preliminary Deployment Concept](#Deployment_Concept), [Preliminary Support Concept](#Support_Concept) and [Preliminary Retirement Concept](#Retirement_Concept)|
+|<span id = "BRS">BRS</span>|Business Requirements Specification商业需要说明文档|从商业上的愿景、考量出发|
+|<span id = "LCD">LCD</span>|Life-cycle Concept Documents生命周期概念文档|由[PLCD](#PLCD)发展而来，在business operations level加入了对stakeholder needs 安定requirements的考量|
+|<span id = "StRS">StRS</span>|Stakeholder Requirements Specification利益相关方需要细则|在概念阶段对问题的延申(加入了对stakeholders的考虑)，但是仍然没有涉及具体的操作，是提出、发现、定义问题的加深过程|
 |<span id = "SyRS">SyRS</span>|System Requirement Soecification系统需求细则|SyRS也可以简写成SS(System Specification)|
+|<span id = "OpsCon">OpsCon</span>|Operational Concept 产品操作流程概念|试想产品如何交付给用户并被使用者使用；其在ConOps的背景(context)下得到并由business management level向business operations level的过程中由preliminary阶段实际考虑了stakeholders的需求，因此在businees operations level的definition结束以后contains Stakeholder Needs.|
+|Null|<span id = "Acquisition_Concept">Preliminary Acquisition Concept</span>|描述了系统如何取得（获得），包括了利益相关者组织(stakeholder engagement)，项目需求定义(requirement definition)，资源募集与协约(soliciitation and contracting issue)，设计、生产与验收(design, production and verification)|
+|Null|<span id = "Support_Concept">Preliminary Support Concept</span>|支持系统或者说是“售后”系统？它描述了为了支持系统部署后能够维持正常运转所需要的infrastructure and manpower。一个支持系统需要操作支持(operating support)比如机床代加工、engineering support工程师服务支持、维保支持(maintenance support)，supply support（补给支持）比如军队后勤支持以及技能培训支持(training support)比如一些软件推广时会有专人培训使用|
+|Null|<span id = "Deployment_Concept">Preliminary Deployment Concept</span>|部署的概念描述了系统如何被证实可行(validated)，分发到使用者手中(delivered)，投入到实际使用(introduced into operations)|
+|Null|<span id = "Retirement_Concept">Preliminary Retirement Concept</span>|描述了系统废弃后如何处理(be removed from operation and retired)，比如一些被使用的或被产出的有害材料如何处理|
 
+##
 
