@@ -1,5 +1,5 @@
 # Apache 安装 & 解析PHP
-本文遵循MIT分享协议。
+本文遵循MIT协议。如果你有任何问题，请联系作者Toichi Tanaka - 11911421@mail.sustech.edu.cn
 
 ## Apache 的安装过程 - Environment Windows 10
 需要说明的是，Apache的实际生产过程主要在Linux平台上；在Windows上使用Apache一般也是在虚拟机Linux系统下

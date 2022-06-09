@@ -1,7 +1,7 @@
 # 单纯形法及应用练习
 ````
 DOCTYPE - md & Katex. 使用基于Pandoc的渲染器输出PDF文档
-Copyright is reserved by Harry Chen. If you have any problem, please contact the author through 11911421@mail.sustech.edu.cn
+本文遵从MIT协议. If you have any problem, please contact the author through 11911421@mail.sustech.edu.cn
 ````
 
 单纯形法的知识前提：图片从右向左看
