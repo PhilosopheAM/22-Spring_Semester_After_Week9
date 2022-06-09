@@ -3,7 +3,7 @@
 本文写作过程中参考了其他文献、资料和视频。相关出处我会在引用时说明。
 本文由markdown, html, css写成。
 [toc]
-# What is Open License? 什么是开源协议？
+# What is Open Source License? 什么是开源协议？
 中文互联网对于“开源”的认识越来越多，“开源”一般会联系到软件创作。但事实上，“开源”、“自由”并不仅仅限于软件开发领域。
 文本创作、音乐创作与艺术创作和软件代码一样，都是知识劳动/知识创造；我们同样需要对其进行保护。
 
@@ -47,6 +47,29 @@ CC协议被设计成三层描述（但是描述都都是一件事——协议本
 CC0宣布创作者放弃一切权利，该作品进入公有领域/公共领域/Public Domain. 所有人都可以以任何方式处置该作品。
 
 ## 软件创作的开源协议
+中文互联网上的开源观念逐步进入大家的视野。贴出一个开源教学网站，类似于编码的“菜鸟教程”：
+[开源指北](https://oschina.gitee.io/opensource-guide/) 该网站由Gitee发起，是一个开源百科编写项目。基本上包含了开源入门所需要的所有知识。
+
+### 开源精神与要求
+开源一开始仅仅指软件的开源(OSS)，后来逐渐generalize到硬件开源(Open Source Hardware)、开放设计(Open Design)、开放文档(Open Document). 不仅如此，还在理工技术以外的领域（比如出版领域）同样造成了深远的影响。
+
+根据**开放源码组织Open Source Initiative(OSI)**的定义，开源软件的发行条款必须[包含以下十个条款（满足十个条件）](https://opensource.org/docs/definition.php)：
+![](source/img/What_is_OpenLicense-Open_Source_Def.png)
+
+
+
 
 ### 软件开源运动的历史
-这一部分的内容参考了该网站内容：[PingCAP - 一文看懂开源许可证丨开源知识科普](https://pingcap.com/zh/blog/introduction-of-open-source-license)
+这一部分的内容参考了该网站内容：[PingCAP - 一文看懂开源许可证丨开源知识科普](https://pingcap.com/zh/blog/introduction-of-open-source-license) 
+## Other references
+https://www.bilibili.com/video/BV1tL4y1T7z6?share_source=copy_web
+
+https://www.eet-china.com/mp/a47898.html
+
+https://zh.wikipedia.org/zh-hans/Copyleft
+
+https://creativecommons.org/choose/
+
+https://www.zhihu.com/question/51222514
+
+https://www.bilibili.com/read/cv6986215
