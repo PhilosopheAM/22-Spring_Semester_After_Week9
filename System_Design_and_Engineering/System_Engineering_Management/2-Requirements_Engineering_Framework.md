@@ -45,5 +45,30 @@ Gathering requirements in a formal sustematic way is referred to generically as 
 |Null|<span id = "Deployment_Concept">Preliminary Deployment Concept</span>|部署的概念描述了系统如何被证实可行(validated)，分发到使用者手中(delivered)，投入到实际使用(introduced into operations)|
 |Null|<span id = "Retirement_Concept">Preliminary Retirement Concept</span>|描述了系统废弃后如何处理(be removed from operation and retired)，比如一些被使用的或被产出的有害材料如何处理|
 
-##
+## What is Requirement? 什么是需求？
+A requirement consists three parts:
+1. 系统必须要做的事情 Something that the system must do
+2. 系统必须具备的质量、属性 quality or attribute
+3. 系统开发与使用的约束 constraint
 
+我们之前介绍过几个层次的系统：BRS, StRS, SyRS. 其中前两个相比于后一个不那么formal.无论是哪个层次的系统，都包含以下几个不分：
++ 需求声明 Requirement statements
+  + 系统所需要提供的功能与服务：系统需要做的，或者系统需要采取的行动(functional requrements)
+  + 系统所必须具备的质量、性质和属性(qualities, properties, or attributes). 一般被称作“非功能性需求”(non-functional requirements)
+  + 系统必须遵守的限制，例如在什么样的环境下工作、或者开发环境（有时候这些限制被归类到非功能性需求里面）
++ 效果、验证以及对每一条声明的需求的合情合理的解释
++ 系统需要integrate或interface（与之集成或从接口进行交互）的其他系统的定义、声明与解释
++ 系统的工作内容(Information about the application domain within which the system must operate)
+
+一般情况下，需求说明应当关注系统应该做什么，而不是怎么做。当然有一些不可抗力情况下也需要在说明中包含“怎样做”。但是，非必要情况下，仍要确保BRS,StRS，SyRS提供logical specifications而不是physical specifications（前者在问题domain，后者在解决方案domain）。
+
+Emergent Properties **涌现性质**
+系统中的一些性质必须要集成后才会出现，我们把这样的性质称为涌现性质(emergent properties). 这些性质的特点是：
+1. are possessed by the system as a whole
+2. 只有所有individual subsystems have been integrated后才会出现
+3. 一部分in isolation的系统（组成部分），不会展现这些性质
+4. 却决于组分与组分之间、环境与组分之间的Interaction
+
+涌现性质必须在top-down方法中被定义。涌现性质可能并不被预期，且结果不一定是好的性质。
+
+书中举的例子是**自行车**, since it can only perform its principal function when all subsystems, including the rider, have been integrated.
