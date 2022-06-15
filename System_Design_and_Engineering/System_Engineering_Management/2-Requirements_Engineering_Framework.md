@@ -72,3 +72,19 @@ Emergent Properties **涌现性质**
 涌现性质必须在top-down方法中被定义。涌现性质可能并不被预期，且结果不一定是好的性质。
 
 书中举的例子是**自行车**, since it can only perform its principal function when all subsystems, including the rider, have been integrated.
+
+## 什么是需求工程？ What is Requirements Engineering? 
+总结来说，需求工程做三件事：
+1. 确认context
+2. 确认context下商业和利益相关方的需求与需要(business and stakeholder's needs and requirements within context)
+3. 给出符合Needs的需求与细则
+
+引用书中的原话：
+> (From the view of the business management,) Unless the requirement set is well defined, the project has no firm base and the resources allocated to it will be inapproprate...If without sufficient oversight, the business may be held to ransom（被胁迫）by stakeholders insisting on unrealistic requirements that business management have not approved.
+> (From the project manager's perspectives, ) the set of requirements is an essential part of the definition of the scope of the project...a well defined scope(set of requirements) is necessary to able to justify any expenditure of funds or effort within the project, and eventually to be able to determine when the project is complete.
+
+我来总结一下原书的观点：
+1. 从商业管理的角度来看：需求定义与分析涉及到一个组织的有限的资源的分配问题。如果连需求是什么、需求的问题规模有多大都不知道，怎么能够合理地分配资源来完成任务、解决需求呢？
+2. 从项目经理（管理人）的角度来说，需求定义与分析确定了项目的格局(scope of the project)。项目管理层面需要以需求工程的结论作为Base来进行如工作分配、进度报告、确认工作完成情况等管理工作。
+
+**需求工程**是一套rigour, formal methodology. 依据需求工程的流程，可以提供"the best chance that we begin the project with a set of requirements that is complete, balanced, comprehensible, feasible, and consistent"。这样做可以带来很多益处，比如调和商业管理者与利益相关方的观点（目标）、更加积极地拥抱（需求上的）变化等等。
