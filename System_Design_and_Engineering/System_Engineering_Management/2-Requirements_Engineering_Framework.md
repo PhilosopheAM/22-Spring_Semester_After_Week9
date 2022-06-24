@@ -88,3 +88,31 @@ Emergent Properties **涌现性质**
 2. 从项目经理（管理人）的角度来说，需求定义与分析确定了项目的格局(scope of the project)。项目管理层面需要以需求工程的结论作为Base来进行如工作分配、进度报告、确认工作完成情况等管理工作。
 
 **需求工程**是一套rigour, formal methodology. 依据需求工程的流程，可以提供"the best chance that we begin the project with a set of requirements that is complete, balanced, comprehensible, feasible, and consistent"。这样做可以带来很多益处，比如调和商业管理者与利益相关方的观点（目标）、更加积极地拥抱（需求上的）变化等等。
+
+### Requirements Elicitation and Elaboration 需求生成与发展
+
+我们在做系统设计工作时，都知道要从需求出发。我们也知道，需求工程可以分成三个阶段(BRS, StRS, SyRS).这是一个从高层级向低层级的发展过程。在每一个层次上的需求，都是经过三个过程才确定的：
+1. Elicited requirements 引出需求。从上一层得到的需求，是可直接获得的（比如从business manager or stakeholder那里问到）
+2. Decomposed requirements 分解需求。从引出需求分解得到的子需求、更加具体的需求。书中举例子：一个飞行器在特定场地降落，那么跑道长度、飞行器重量、合适的航空指挥系统等等就是子需求。*In decomposition, the need for the children requirements is obvious in the parent.*需要说明的是，当子需求被定义好后，父需求就是冗余的了（total meaning of children requirements is equivalent to that of the original requirements）。
+3. Derived requirements 推断需求。引出需求可能并没有直接说明的需求，但是可以从引出需求推断出的需求称为推断需求(Derived requirements)。需求工程师们需要做一些推断、发散才可以得到该种需求。*(Although not directly stated, ) derived requirements is a necessary part of the system design if one or more of the directly stated requirements are to be met.*
+
+在需求生成阶段(State of requirements elicitation),需要engagement with the stakeholders. 这个engagement的方法有很多哈，书上给了一连串比如facilitated structured workshops, brasinstorming, interviews, propotypes等等。
+
+#### 为什么需求发展过程中需要层级性(Hierachy)
+1. 需求工程师可以将系统分解为复杂性较低的任务，更好地被理解与交流。
+2. 分解后的工作(tasks)可以managed within the limitations of human/organization's ability.
+3. 层级性提供了可追溯性。*Traceability is assisted by a hierarchical numbering of requirements.*
+
+### Requirements Validation 需求验证
+需求验证的原则就是“逐级向上负责的验证”。
+但是要说明的是，由于在系统设计的早期阶段——概念设计阶段，我们是面向stakeholders和business needs的，就没有一个明确的baseline（不像后面流程都是以上一级的结果为Baseline）.验证的最关键点就是*ensure that we have a complete set of requirements that, in their aggregation, represent the system required by the stakeholders and meets the business needs.*
+
+### 需求文档的撰写 Requirements Documentation
+一份需求文档的五条守则：
+1. 确保每一条需求是必要的、简短的、定义明确的。
+2. 给每一条需求都定义好合适的条件（定量或者定性）。
+3. 确保每一条需求都是可验证的，可确定是否完成的。
+4. 避免过度的细化(over-specification)，不必要的约束(unnecessary constraints)和没有边界的说明(unbounded statements)。
+5. 最好定义一个标准的模板来描述你的需求，以确保可读性。使用简短的句子或段落，合理地使用表格、公式等来帮助你消除混淆(ambiguity)。
+
+### 需求管理
