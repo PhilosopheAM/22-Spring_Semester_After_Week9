@@ -116,3 +116,15 @@ Emergent Properties **涌现性质**
 5. 最好定义一个标准的模板来描述你的需求，以确保可读性。使用简短的句子或段落，合理地使用表格、公式等来帮助你消除混淆(ambiguity)。
 
 ### 需求管理
+需求管理要求建立一个合规订的(compliance)流程来对需求的产生、发展与验证追溯进行管理。低层次的需求需要被充分理由地声明(be justified). 另外，由于需求可能会发生变化(changes to requirements)，需求管理也需要考虑到如何建立一个formal procedure来对变化进行管理。
+
+#### 变化管理与可追溯性 Change Management and Traceability
+**Def of requirements traceability:** allows us to be able to identify where each requirement came from, what requirements are related to it, and what requirement(s) stemmed from it. Contrary to "from" it, we could also identify all requirements affected by the change if a requirement must change for some reason.
+There are two kinds of traceability:
+1. Forward traceability
+2. Backward traceability
+
+**Forward traceability** allows us to ensure each requirements have been addressed in design, i.e., design decisions can be traced from any parent requirements or we say any system-level requirement down to a detailed design decision(a child requirements).对于每一个需求来说，我们都要在subordinate design documents中找到至少一个child来确保所有的需求都有对应的实现。
+**Backward traceability**的重要性在于我们不想要冗余设计。那么，在需求工程阶段，我们要保证下一个阶段的每一个需求都是从上一个阶段的父代需求(parent document)中产生的。Backward traceability可以让orphan requirements out-of-scope.
+
+#### 需求管理工具：RBS和FFBD
