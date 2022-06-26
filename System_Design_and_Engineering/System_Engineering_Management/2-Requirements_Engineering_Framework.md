@@ -128,3 +128,17 @@ There are two kinds of traceability:
 **Backward traceability**的重要性在于我们不想要冗余设计。那么，在需求工程阶段，我们要保证下一个阶段的每一个需求都是从上一个阶段的父代需求(parent document)中产生的。Backward traceability可以让orphan requirements out-of-scope.
 
 #### 需求管理工具：RBS和FFBD
+在RBS中，需求都以一个**树状结构**呈现(a tree-structured elaboration of the mission). 与RBS相像的一个树状结构是**WBS(Work Breakdown Structure)**，但是WBS是physical work packages and other project-related work的结构，RBS则是logically / functionally的。**RBS也被称为 functional hierarchy**.
+![](source/img/2-Requirements_Engineering_Framework-RBS-Figure.png)
+
+RBS之后会发展出StRS和SyRS，都是将需求更加具体地说明。使用RBS有几个好处：
+1. 这个framework可以作为一个reference source从而系统的方方面面的需求都能be addressed而不会被omitted.
+2. 允许多人协作，可以有效地分配工作与责任(responsibility for sections of requirements).
+3. 避免了需求的重复提出(duplication of requirements).需求的重复提出会带来conflict between requirements 并且导致概念的混淆与工作的混乱。
+
+关于树状结构，要注意**并不是所有的系统都可以用树状结构描述**。要以实际情况为主（当然绝大部分架构都是可以用树状来描述的）。
+
+**FFBDs是 Functional Flow Block Diagrams的缩写**。FFBDs可以有效地和RBS结合使用，来显示functions之间的关联(interrelationship of the functions).无论functions是sequential还是parallel都可以表现。FFBDs同样是top-down的hierarchical decomposition结构。*Every top-level block can be expanded(decomposed and derived) as necessary to ensure that the functionality of the system is adequately defined.*
+
+可以参考下面这个视频来学习FFBDs-[Youtube ENGN2225 OC - Functional Flow Block Diagrams](https://youtu.be/Ii1MI68MKDs)
+可以看到，视频中还说明了一种**MFBDs**的结构，是Maintenance flow即维护（正常工作）的流程图，是当功能出现异常时处理流程的说明。
