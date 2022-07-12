@@ -32,4 +32,19 @@
 ## C1 - 细致地确定Business Needs
 确认了谁是stakeholders和存在什么constraints后，要考虑的事情就变成:确定利益相关方的考量(Elicit business intention)。
 ### C1 - 愿景、目的与目标 Mission，Goals, and Objectives
-Mission（一般翻译为愿景）
+Mission（一般翻译为愿景）要求简短但能够覆盖方方面面的说明(succint but thorough). Mission要能够承担利益相关者的对项目的共识。
+在得到一个drafted的mission statement以后，我们要做的是确定goals和objectives. 简单来说，Goals是相对宽泛一些的statements,对mission的延申，又继续延申(spawn)出更多的更细致的Objectives.在这样不断延伸、发展的过程中，我们要注意不要让新生的statements变得odd，也就是说，一切都要从旧的定义、认识中有源地发展出来，而不是凭空跳出来（要有记录的源头）。
+Mission并不是一成不变的。Mission承载了business层级上我们对项目的认识、建设与期望，而当项目稳步发展时，我们会对这个项目本身及部署的环境、实际的形势有更深入的理解，这个时候我们要做好准备更新我们对mission的statement.
+另外，一般来说我们的系统会面向广阔的社区(broader community of stakeholders)，我们在先期管理团队（小团体）讨论完mission, goals与objectives以后要将result拿出来和更大的相关群体讨论。我们最后要得到的有效的文件是*a formal set of statements that provide a complete, balanced description of the system, covering all aspects of operation, support and maintenance.（一份正式的、规范的说明，对系统及系统的操作、支持与维护有完善的阐述）*。之后的所有subsequent的requirements都要能够溯源(traceable)到这份文档。
+### C1 - 定义先期验收标准 Define Preliminary Validation Criteria
+书中对这一工作给了好的定义：
+>Broadly, validation criteria encompass any mechanism by which the customer will measure satisfaction with the products of the Acquisition Phase.
+
+翻译一下就是：用户对预期产品会有哪几个方面的期望？这些方面就是验收标准需要提前制定以进行设计验证的。
+### C1- Preliminary Life Cycle - Preliminary Retirement Concept
+我们在Chapter2已经介绍过preliminary life cycle. 但是我们在这里仅再强调一下retirement concept. 由于是conceptual design stage，我们并没有真实投入生产使用的反馈。我们需要想象三个可能性：
+1. 什么原因可能会导致retirement？ (identify the reasons for potential retirement)
+2. 系统retirement的可能的方式、方法？(identify potential reirement methods for the system)
+3. 这些方式、方法的设计问题？(design issues that may arise from the consideration of each retirement method)
+
+## C1 - Scope System
