@@ -1,3 +1,4 @@
+[toc]
 # Conceptual Design 概念设计阶段
 概念设计的产物是FBL(the Initial Functional Baseline). 这个baseline提供一个系统层级的逻辑架构(logical architecture). 由于概念设计还在问题层(problem domain)，因此它与用户（客户）联系紧密（一切从用户开始）.
 
@@ -9,17 +10,17 @@
 下面我们讲一下如何进行概念设计：五个步骤，一张图。需要说明的是，五个步骤是Iterative(迭代)的，当然设计也是迭代的。
 ![](source/img/3-Conceptual_Design-How_to_Conceptual_Design.png)
 
-## C1 stage - Define business needs and requirements - BNR
+# C1 stage - Define business needs and requirements - BNR
 在这一步，我们要做的工作是确定主要的Stakeholders和Constraints.需要注意的是，constraints和requirements总是联系在一起的。Constraints的类型有很多种，接下来会详细介绍。
 
-### C1 - Who are the major stakeholders?
+## C1 - Who are the major stakeholders?
 很多人在确定主要的利益相关者时会犯“列举”的错误，也就是将所有可能受到影响的人都假定是利益相关方。书中举了一个例子：
 >银行所使用的ATM系统，运钞的安保人员算不算stakeholders?
 
 尽管他们的requiremetents place considerable constraints on the design of the system, 但他们不会作为stakeholders被考虑。在类似的公共产品设计中，如果采用列举额的方法确定stakeholders，那几乎是无穷无尽的。
 我们通常使用的确定原则是：一个stakeholders（组织或个人）必须有权利影响系统的输出(has a right to influence the outcome of the system)；而不是简单地以（可能会）受到系统影响来划分。
 
-### C1 - What are the constraints?
+## C1 - What are the constraints?
 限制、约束(constraints)是另外一种形式的需求。(Constraints are requirements that are imposed on the system in some way.)
 对于约束的分析我们采用自顶向下的方式。
 1. 商业约束(Business Constraints) - 包含管理指导、机构政策、机构标准、行业对于系统开发的指导准则。这一层面的约束主要是出于商业上的而非具体项目操作上的，涉及到公共关系、合同承包政策、人力资源情况、生命周期全流程考量(use of established life-cycle processes). 举一个例子，近期国内三大航空公司给空客下了：“世纪订单”。很多人问为什么不买国产的C919，理由是C919产能不足，且各个航司基本对空客、波音等老牌航空飞机manufacturer的飞机后勤保障体系建立得更好，短时间内无法为C919建立完善的后勤保障体系；而不买波音的理由就更简单了，政治对抗，这也是商业约束的一部分。
@@ -57,9 +58,10 @@ Retirement的中文翻译是“退休”。当然，作为产品和服务来说�
 到达这一步前，我们已经在business mangement level确定了needs(requirements)并利用scope system对context和interconnection有了认识，我们再往后走就逐渐接近solution domain（解决方案域）。
 这一步的主要工作就是transformation of those needs into formal requirements（将这些发现的需求转化为正式的、待执行的需要的工作）。
 
-### C1 - Feasibility Analysis 可行性分析
-在概念设计的阶段，我们要求所有的道德business management statement必须是logical terms（逻辑描述的）。这些逻辑描述的needs都是问题域(problem domain)的，在向解决方案域(solution domain)转变时，我们要意识到*each alternative solution class may represent a completely different type of project*（每一个可能的解决方案都代表着朝向一个完全不同的项目）。
+### C1 - <span id='Feasibility-Analysis'>[Feasibility Analysis 可行性分析](https://en.wikipedia.org/wiki/Feasibility_study)</span>
+在概念设计的阶段，我们要求所有的business management statement必须是logical terms（逻辑描述的）。这些逻辑描述的needs都是问题域(problem domain)的，在向解决方案域(solution domain)转变时，我们要意识到*each alternative solution class may represent a completely different type of project*（每一个可能的解决方案都代表着朝向一个完全不同的项目）。
 Feasibility Analysis（可行性分析）的目标是*narrow down the solution domain so that the subsequent project can be managed effectively*，即缩小解决方案的可能（确定问题的解决方案）来让后续的项目管理变得有效。之所以要做这一步，是因为设计的广度是巨大的（这有点像双钻图的第二部分, the seond part of double diamond model）。
+![Feasibility Analysis -Wikipedia](source/img/3-Conceptual_Design-Wiki-Common_Factors-Feasibility_Analysis.png "维基百科-Feasibility Analysis-说明")
 Feasiblity Analysis仍然是business management decision，还不涉及到stakeholders的商业执行层面(business operational level).
 
 ### C1 - Define Business Requirements - BRS
@@ -73,3 +75,30 @@ Feasiblity Analysis仍然是business management decision，还不涉及到stakeh
 
 我们可以看到，这个RBS记录了从一个need（威慑未经许可的闯入者）扩展到(decomposed, derived into)四个待实现的需要(requirements).根据我们先前的定义，这四个小点一起就能够完全地实现这个“威慑未经许可的闯入者”的need.
 之后的StRS, SyRS就是从RBS继续扩展，最终到Physical domain，落实到用技术实现。
+
+# C2 stage - Define Stakeholder needs and requirements - SNR
+After business management confidently defined the problem domain in sufficient detail to communicate their needs and requirements to the stakeholders at the business level, these stakeholders then go on to develop their needs and requirements (we call it SNR) within the context of BNR.
+
+The outcome of further development of BNR brings out LCD and StRS. We will discuiss them latter.
+
+## C2 - Define Stakeholder Needs
+先前定义的操作场景(operational scenarios)会被加深定义到更加细致地、更接近实际应用需求的场景(ofen called vignettes). 
+*这里的vignettes可以理解为：一张中心清晰，但越向边缘越模糊，最终消失的照片*
+之所以要有这一步，是因为various stakeholders比上个阶段的business management level更加接近实际的、具体的开发、使用场景，他们的意见将PLCD（早期产品生命周期）文档补充为LCD（产品生命周期）。
+
+这一阶段的产出应当受到再一次检查(review)，来确保所有的new ideas被大多数的stakeholders赞同、支持(endorse)，然后再再Business management层review，来确定可行性。
+
+## C2 - Define Stakeholder Requirements
+在这一步，就要将needs转换成requirements.再一次，我们在这里使用RBS Structure来帮助我们细致、无遗漏地完成BNR到StRS的扩展。
+
+和Business level的transform一样，从needs扩展到requirements，肯定还会遇到多种选择(multiple class)，我们在上一步(business management level)使用了[Feasibility Analysis](#Feasibility-Analysis).在这一步我们介绍一个新的角度，不从“是否可以实现”的角度进行讨论，而是从“Trade-off”的角度。
+Trade-off study的意思就是：产品的几项指标可能无法同时提升，让一项指标变得更好，就会使其他指标变差。这个时候，哪一项指标更重要、指标的最低要求约束是什么样的，就拿出来研究，做出取舍。这就是trade-offf. 在stakeholder提出needs以后，设立trade-off的标准或原则，然后甄别needs-requirements的途径，最终得到requirements.
+
+## C2 - Last step: work out StRS
+StRS就是stakeholder requirements（也被理解为user requirements）。好的StRS可以使阅读者读完StRS之后，能够了解以下几个方面：
+1. The likely applications or missions for which the system is intended. 系统要做什么工作。
+2. The major operational characteristics to be exhibited by the system. 系统主要的操作过程（来实现最主要的功能）。
+3. The operational constraints that limit the design and development of the system.系统设计与开发最主要的限制是什么。
+4. The external systems and interfaces with which the system under development must operate.系统必须涉及的其他系统以及与之联系的接口是什么。
+5. The operational and support environment within which the system must exist. 支持系统工作与发展的环境是什么样的。
+6. The support concept to be employed to support the system and enable it to continue performing in accordance with customers expectation. 使得系统可以持续满足用户预期的开发、改进理念，最好这个理念本身也可以使系统发挥其最大特色、优势。
