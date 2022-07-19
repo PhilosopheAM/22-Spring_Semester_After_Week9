@@ -1,7 +1,7 @@
 
 ````
 DOCTYPE - md & Katex. 使用基于Pandoc的渲染器输出PDF文档
-Copyright is reserved by Harry Chen. If you have any problem, please contact the author through 11911421@mail.sustech.edu.cn
+Copyright is reserved by Harry Chen. If you have any problem, please contact the author through ContactMeThroughMail@protonmail.com
 ````
 
 [toc]
@@ -142,7 +142,7 @@ A metaheuristics is a general solution method that provides both a general struc
 <img src="https://media.giphy.com/media/azlNDcF9sqWpEI63wU/giphy.gif" title = "模拟退火算法演示" alt = "模拟退火的演示 - 逐渐到达全局较（最）优解">
 
 上面是模拟退火算法的迭代示意
-<!-- 上面的这个gif动态可能无法在PDF等输出格式下查看，如果需要查看，建议使用支持md的渲染器（阅读器），如有问题请联系11911421@mail.sustech.edu.cn 笑，如果是pdf查看也看不到这句注解吧-->
+<!-- 上面的这个gif动态可能无法在PDF等输出格式下查看，如果需要查看，建议使用支持md的渲染器（阅读器），如有问题请联系ContactMeThroughMail@protonmail.com 笑，如果是pdf查看也看不到这句注解吧-->
 
 **核心操作**
 1. 当移动集合$M$中存在当前解的可行邻域(Immediate neighbors of the current trial solution)时，随机选择可行移动$\Delta x\in M$记为临时移动$\Delta x^{t+1}$ 并计算净目标函数改进值$\varDelta obj$. 其为从当前解移动到下一可行解（临时解）目标函数的差值（注意该值可能为负值）
