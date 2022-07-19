@@ -1,5 +1,5 @@
 >本文作者为Toichi Tanaka. 本文参考资料已在文中给出。
-如果你有任何疑问，请联系11911421@mail.sustech.edu.cn.
+如果你有任何疑问，请联系ContactMeThroughMail@protonmail.com.
 本文遵循MIT开源协议。
 [toc]
 # Requirements Engineering Framework 需求分析框架

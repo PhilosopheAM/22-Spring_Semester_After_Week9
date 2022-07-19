@@ -1,5 +1,5 @@
 # Apache 安装 & 解析PHP
-本文遵循MIT协议。如果你有任何问题，请联系作者Toichi Tanaka - 11911421@mail.sustech.edu.cn
+本文遵循MIT协议。如果你有任何问题，请联系作者Toichi Tanaka - ContactMeThroughMail@protonmail.com
 
 ## Apache 的安装过程 - Environment Windows 10
 需要说明的是，Apache的实际生产过程主要在Linux平台上；在Windows上使用Apache一般也是在虚拟机Linux系统下
@@ -51,5 +51,5 @@
    ````
 4. 打开浏览器，在url栏中键入 **http://localhost/test.php**. 一般来说，会显示php代码文本。否则，检查上述步骤。
 
-*Copyright is reserved by Toichi Tanaka. If having question, plz mail the author at rchyts@163.com. Follow MIT License.*
+*If having question, plz mail the author at ContactMeThroughMail@protonmail.com. Follow MIT License.*
 

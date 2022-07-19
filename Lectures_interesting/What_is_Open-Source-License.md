@@ -1,4 +1,4 @@
->作者为Toichi Tanaka. 如果你有任何疑问，欢迎联系11911421@mail.sustech.edu.cn
+>作者为Toichi Tanaka. 如果你有任何疑问，欢迎联系ContactMeThroughMail@protonmail.com
 本文遵循CC-BY-NC协议。
 本文写作过程中参考了其他文献、资料和视频。相关出处我会在引用时说明。
 本文由markdown, html, css写成。

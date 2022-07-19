@@ -1,7 +1,7 @@
 # 第九周系统设计与管理 运筹学介绍 (Introduction to OR)
 ````
 DOCTYPE - md & Katex. 使用基于Pandoc的渲染器输出PDF文档
-Copyright is reserved by Harry Chen. If you have any problem, please contact the author through 11911421@mail.sustech.edu.cn
+Copyright is reserved by Harry Chen. If you have any problem, please contact the author through ContactMeThroughMail@protonmail.com
 ````
 
 
