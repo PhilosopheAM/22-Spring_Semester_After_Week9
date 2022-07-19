@@ -64,8 +64,8 @@ Feasibility Analysis（可行性分析）的目标是*narrow down the solution d
 ![Feasibility Analysis -Wikipedia](source/img/3-Conceptual_Design-Wiki-Common_Factors-Feasibility_Analysis.png "维基百科-Feasibility Analysis-说明")
 Feasiblity Analysis仍然是business management decision，还不涉及到stakeholders的商业执行层面(business operational level).
 
-### C1 - Define Business Requirements - BRS
-这一步主要是利用一个工具框架(framework)来生成一个层级性的(hierachical)结构。工具是**Requirements breakdown structure(RBS)**.
+### C1 - Define Business Requirements - RBS
+这一步主要是利用一个工具框架(framework)来生成一个层级性的(hierachical)结构。工具是**Requirement 5s breakdown structure(RBS)**.
 ![](source/img/3-Conceptual_Design-Example_of_RBS_domesticSecurityAlarm.png)
 上图是一个家用的安全警报器的RBS.我们看一看最左侧的一个function(need)是对未经许可的闯入进行威慑、阻挠。在下一级结构中有四个solutions(requirements-待实现的需要)，分别是：
 1. 在邻近的房屋进行威慑
@@ -102,3 +102,94 @@ StRS就是stakeholder requirements（也被理解为user requirements）。好�
 4. The external systems and interfaces with which the system under development must operate.系统必须涉及的其他系统以及与之联系的接口是什么。
 5. The operational and support environment within which the system must exist. 支持系统工作与发展的环境是什么样的。
 6. The support concept to be employed to support the system and enable it to continue performing in accordance with customers expectation. 使得系统可以持续满足用户预期的开发、改进理念，最好这个理念本身也可以使系统发挥其最大特色、优势。
+
+# C3 stage - Define System Requirements
+系统层级的需要的定义：
+>The aim of system requirements def is to determine what the system must do in order to meet the stakehjolder needs and requirements, i.e., to describe the requirements at the system level and be able to relate the logical design back to the SNR, particularly the StRS.
+
+在System Requirements的定义中，最重要的是concentrate on what is required rather than how to do it. 书中举了一个例子：一个无人机需要定速巡航功能，来perform这个function的physical subsystems并不是这个stage需要考虑的事情，这是latter stages的engineering问题。
+
+**如果过早地去考虑如何(how to)实现这些需要(meet the requirements)，设计就会走样(ill-informed)**，或者说，会导致次优的设计方案(sub-optimal design). 这一点是由于消费者、使用者(customer)天然地倾向于说出他们“想要什么功能”，而不是“用什么办法实现什么效果”。一旦我们提早地考虑“如何做”，设计工作就会出现一种风险：关于系统表现(system performance)实现的责任与风险(responsibility and risk)从承包商（或者其他实现物理系统的团队）(contractor)转移到(shifting to)消费者、使用者身上。最简单明了的反面例子就是：设计了一个及其复杂的物理系统，然后“教育”消费者如何使用这个物理系统。
+
+一般来说，我们依旧使用RBS方法来构造、标识system requirements.
+
+## C3 - Perform Requirements Analysis and Allocation 开展需求分析并打包分类需求
+需求分析(Requirements Analysis)是StRS向SyRS转变的桥梁。简单来说，就是围绕每一项需求(requirements)、或者说“需要实现的目标”、“目的”我们讨论几个指标。
+
+### C3 - Identify the properties of the Requirements
+There are many kinds of requirements.
+1. functional or non-functional
+2. constraints 不要忘记了约束条件同样是需要实现（满足）的
+3. interfaces 这是特殊的，主要实现连接功能的需要
+
+除了从内涵上分析requirements的类型，requirements还可以从在系统中的功能身份来划分：
+1. Operational requirements 用户、使用者往往考虑（只考虑到）这一层面
+2. Maintenance and Support 维护与技术、服务支持，这是一般消费者难以察觉到的需要（这些需要只会在用户们必要时显露出来，但一旦不被满足，用户对产品的抱怨就会出现，因为这些需要是不被预期的，也是可以无穷无尽的）
+   
+### C3 - Define Performance Requirements 你需要定义的功能实现得有多好？
+我们在RBS结构中首先将functions确定并分门别类地安排好位置(grouped)，之后设计团队就要专注于新的系统需要功能达到的performance-related parameters. 
+一个好的原则是：每当一项需要被基本剖析、定义好(every time a requirement is articulated)，至少一个对应的performance statement is made（关于性能、功能的表现的确定标准就要同时提出）。
+举个例子：假如团队正在设计、开发一款移动式硬盘，我们说它的一个need是“用户有超量的重复读写需求”，然后我们确定的requirement是“硬盘需要实现比市面上常见的硬盘更多的读写次数”。那么相应的(corresponding)表述就应当是“正常使用条件下，硬盘可以达到XX次的重复读写操作，是市面上同类产品的XX倍”。
+
+### C3 - Define Verification Requirements 如何通过设计（定义）验收方式，来确认你的requirements实现了
+这一个设计工作可以和上面的performance requirements工作联系起来。
+还是以硬盘设计为例接着往下说：既然做出了performance的statement，那么你的团队就要真的去兑现你的声明(statement)。你们的产品在迭代过程中要通过验收，而在这一项功能上的验收标准恰恰就是“通过测试，确认硬盘可以XX次重复读写操作，是市面上同类产品的XX倍”。或者是设计其他的验收标准，比如附加上：“在A轮测试中，收到测试者关于读写失效的反馈少于XX”。
+总而言之，要围绕你们关于function的statement来做verification method design.
+
+**Warning注意** : 请不要小看验收工作的设计，产品的功能PPT写得再天花乱坠，没有实现就是镜花水月。尤其是context给的constraint，比如说XX产品面向XX地区的人群，XX地区有独特的地理条件限制（比如高寒）；一旦你不能满足constraint，众多高级的功能都是假的，消费者都会直接否定你的设计。所以，请在每一个requirement提出时都为它附加上验收的说明！
+
+### C3 - 为了团队协作与说服力 - Assign Rationale
+为每一项提出的requirement附加上充足的、解释性的说明(rationale可以理解为逻辑性的辩解、原因)。
+
+这样做的好处有两点：
+1. 消除定义的模糊性 (Remove ambiguity)
+2. 在需求分析工作中很可能有人与你一起协作，写下充分的说明，来让所有人理解你的想法
+
+### C3 - 得到SyRS并检视
+分析过程就是前面列举的几条。在做完这些工作之后，不要忘记了我们要出一个RBS结构的SyRS.
+在RBS中每一项需求分属不同的环节（回忆我们在Chapter-2讲过的住宅警报系统RBS结构）。
+
+我们得到的SyRS就是系统的FBL(Functional Baseline)的核心啦。
+在撰写SyRS时有很多forms（当然RBS是核心结构），要留出一定的degree of latitude（自由度），因为实际落地情况有很大可能与设想的不同，并且在需要与需要之间(amoung requirements)会有不同的重要程度。
+
+部分需要(some of the requirements from the set)会被我们考虑是“系统的核心”(key indicators of system performance). 他们可能实现了重要的、关键性的、起连接作用的功能，或者会在特殊工况下产生巨大风险，这些可能性会对系统的表现造成巨大的、决定性的影响！
+但是换言之，我们只要仔细排查了这些requirements的表现，就对系统的基本表现有了足够的把握。所以这些requirements也被我们称作**technical performance measures(TPMs)**-**系统的技术表现指标参数**
+
+# C4 stage - System-level Synthesis
+在这一层面我们开始接触“怎么做”(How to / Solution domain).
+我们在先前做的许多工作都是“分而治之”，在这一步我们开始正式使用“综合考虑”的方法(synthesis).
+
+>Systhesis(at the Conceptual Design level) establishes a system configuration that is representative of the final system form. 
+
+但是注意由于design是immature的，configuration不是final的而是会持续改动。
+
+基于我们之前做的requirements engineering and analysis的结果，我们可以得到几个architectural options也就是结构层面上的解决方案（注意不是细节，而是大的解决方向选择）。我们要综合诸如：
++ 系统工程过程 system engineering process
++ 生命周期的成本 life-cycle costings
++ 提供的服务或产品的交付质量保证 quality assurance
++ 测试和评估的解决方案以及测试和评估的结果 test and evaluation
++ 维护问题 maintenance
++ Integrated logistics support 我的理解是逻辑上现有的对系统的整体的支持（比如整个工作团队有对某个方案更好的技术支持）
++ 其他
+
+对solutions的评估少不了建立一个评估框架（基于什么标准认为是好的方案）(an evaluation framework). 在评估的过程中，也是对solutions的iteration（迭代）。
+
+我们在C4阶段要尽量消除之前的performance的摇摆(ranges of)，也就是说，要更加细致地说明，尤其是说明倾向于选择的方案能够给出的最低接受表现(the minimum acceptable level of performance). 
+C4 阶段的产物就是the refined SyRS以及a broad system solution for achieving the specification requirements（对各个需要的不同的实现方案）。
+
+# C5 stage - System Design Review (SDR)
+SDR就是“系统设计检查”，也就是对系统设计层面是否存在严重问题进行检查。
+这一检查需要单独形成文档，内容包含：
+1. **正式的、对商业及利益相关方需求的概念设计的可行性证实与确认** formal confirmation that the logical design meets the business and stakeholder requirements
+2. **正式的对设计决策与接受情况的记录** a formal record of design decisions and acceptance （拿Web网站开发的例子来说，甲方提出：要和XX网站的设计风格保持一致；乙方的设计团队就开始做需求拆解与分析，比如交互方式、视觉元素、功能类别方面拿出来讨论；设计师团队作出判断，并和甲方确认，这就是设计团队内部的及外部的决策与接受）
+3. **正式的对主要的设计者的访谈（内容聚焦在intended design）** a formalized communication of the intended design approach to the major players in the design effort
+4. **双V验证方案的认可程度** approval of the V&V plans for the system
+
+补充说明：**V&V**也就是[Validation&Verification](https://en.wikipedia.org/wiki/Verification_and_validation).
+>In practice, as quality management terms, the definitions of verification and validation can be inconsistent. Sometimes they are even used interchangeably.
+>However, the PMBOK guide, a standard adopted by the Institute of Electrical and Electronics Engineers (IEEE), defines them as follows in its 4th edition:
+>- "Validation. The assurance that a product, service, or system meets the needs of the customer and other identified stakeholders. It often involves acceptance and suitability with external customers. Contrast with verification."
+>- "Verification. The evaluation of whether or not a product, service, or system complies with a regulation, requirement, specification, or imposed condition. It is often an internal process. Contrast with validation."
+
+SDR并不是说要对所有发现的问题全部resolve以后才可以进行subsequent design. 对于待解决的问题，使用的方法是*action items are agreed with agreed timelines to account for any outstanding action from the review*（对于相对独立的issue问题，可以在后续的Preliminary Design activities也就是初步设计阶段，限时给出解决方案）。
+我们需要resolving是parellel的，也就是并行解决的（当然前提是issue是相对比较独立、互不干扰的），在之后的设计阶段，我们会再次回头来检查 (reviewd for completeness in conjunction with a later review or audit)。
